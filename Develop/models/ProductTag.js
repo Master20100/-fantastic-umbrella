@@ -29,19 +29,6 @@ references: {
 }
    
   }
-}
-    
-
-
-
-
-
-
-
-
-
-
-
   },
   {
     sequelize,
