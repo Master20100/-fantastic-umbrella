@@ -6,14 +6,15 @@ const { Category, Product } = require('../../models');
 router.get('/', async(req, res) => {
   // find all categories
   const allCategories  = await Category.findAll({
+    // be sure to include its associated Products
    include:[{model:Product}]
 
   });
-  // be sure to include its associated Products
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', async(req, res) => {
   // find one category by its `id` value
+  // const category = await 
   // be sure to include its associated Products
 });
 
