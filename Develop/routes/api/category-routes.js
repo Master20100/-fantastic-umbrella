@@ -11,7 +11,6 @@ router.get('/', async(req, res) => {
    include:[{model:Product}]
 
   });
-console.table(allCategories);
 res.send(allCategories);
 
 });
@@ -26,7 +25,6 @@ router.get('/:id', async(req, res) => {
     // be sure to include its associated Products
     include:[{model:Product}]
   });
-  console.log(`HAVE A LOOK ${req.params} then have a look ${category}`);
   res.send(category);
 });
 
