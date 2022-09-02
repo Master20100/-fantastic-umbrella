@@ -11,7 +11,7 @@ router.get('/', async(req, res) => {
    include:[{model:Product}]
 
   });
-
+console.table(allCategories);
 res.send(allCategories);
 
 });
