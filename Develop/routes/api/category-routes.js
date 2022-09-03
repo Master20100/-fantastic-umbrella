@@ -31,16 +31,29 @@ router.get('/:id', async(req, res) => {
 
 
  router.post('/', async(req, res) => {
-  await Category.create({
-    category_name: req.body.category
-  })});
+  console.log(req.body);
+  console.log(req.body);
+  // await Category.create({
+  //   category_name: req.body.category
+
+  // })
+});
 
   
 
 
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async(req, res) => {
   // delete a category by its `id` value
+  console.log(req.params.id);
+
+  await Category.destroy({
+
+    where: { id: req.params.id },
+
+  })
+  res.send(`Category ${req.params.id} has been deleted`);
 });
+
 
 module.exports = router;
