@@ -28,18 +28,16 @@ router.get('/:id', async(req, res) => {
   res.send(category);
 });
 
-router.post('/', async(req, res) => {
-  // create a new category
-  console.log(req.body)
-  await Category.create({
-    category_name:req.body.category
-  })
-  res.send(req.body);
-});
 
-router.put('/:id', (req, res) => {
-  // update a category by its `id` value
-});
+
+ router.post('/', async(req, res) => {
+  await Category.create({
+    category_name: req.body.category
+  })});
+
+  
+
+
 
 router.delete('/:id', (req, res) => {
   // delete a category by its `id` value
