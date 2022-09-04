@@ -55,7 +55,7 @@ router.put('/:id', async(req, res) => {
 
   try {
     await Category.create({
-      // category_name: req.body.category_name
+      category_name: req.body.category_name
     })
     res.send(`${req.body.category_name} has been added`);
   }
