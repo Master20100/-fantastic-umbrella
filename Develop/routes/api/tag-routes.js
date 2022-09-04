@@ -31,28 +31,29 @@ res.send(tag);
   router.post('/', (req, res) => {
     // create a new tag
   Tag.create({
-    tag_name: req.body.tagName
+    tag_name: req.body.tag_name
   });
-  res.send(req.body.tagName)
+  res.send(`Tag ${req.body.tag_name} has been added`)
   });
   
 
   router.put('/:id', async(req, res) => {
     // update a tag's name by its `id` value
   await Tag.update({
-    tag_name: req.body.tagName,
+    tag_name: req.body.tag_name,
   },
   {
     where: { id: req.params.id },
   })
-  });
+   res.send(`Tag number ${req.params.id} has been updated`)
+});
 
   router.delete('/:id', async(req, res) => {
     // delete on tag by its `id` value
-    const deletedTag = await Tag.destroy({
+    await Tag.destroy({
       where:{ id:req.params.id }}
     )
-    res.send(deletedTag);
+    res.send(`Tag number ${req.params.id} has been deleted`);
   });
 
 module.exports = router;
