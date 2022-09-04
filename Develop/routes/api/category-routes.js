@@ -31,12 +31,22 @@ router.get('/:id', async(req, res) => {
 
 
  router.post('/', async(req, res) => {
-  console.log(req.body);
-  console.log(req.body);
-  // await Category.create({
-  //   category_name: req.body.category
 
-  // })
+  try {
+    console.log(req.body);
+    console.log(req.body.category);
+    await Category.create({
+      category_name: req.body.category
+
+    })
+    res.send(`${req.body.category} has been added`);
+  }
+  catch(err) {
+    console.error(err)
+    res.status(500).send(`Server error`)
+    
+  }
+  
 });
 
   

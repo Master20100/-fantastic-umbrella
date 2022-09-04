@@ -1,5 +1,4 @@
 require('dotenv').config();
-console.log(process.env);
 const Sequelize = require('sequelize');
 
 const sequelize = new Sequelize(
@@ -11,6 +10,7 @@ const sequelize = new Sequelize(
       dialectOptions: {
         decimalNumbers: true,
       },
+      logging:false
     });
 
 module.exports = sequelize;

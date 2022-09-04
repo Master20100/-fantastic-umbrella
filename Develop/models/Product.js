@@ -31,7 +31,6 @@ Product.init(
    stock:{
      type:DataTypes.INTEGER,
      allowNull:false,
-     
      //Validates that the value is numeric
      validate:{
       isNumeric: true
