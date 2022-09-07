@@ -28,9 +28,9 @@ where:{id:req.params.id}
 res.send(tag);
   })
 
-  router.post('/', (req, res) => {
+  router.post('/', async(req, res) => {
     // create a new tag
-  Tag.create({
+  await Tag.create({
     tag_name: req.body.tag_name
   });
   res.send(`Tag ${req.body.tag_name} has been added`)

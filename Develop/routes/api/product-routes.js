@@ -31,7 +31,8 @@ include:[{model:Category},{model:Tag}]
 
 })
 res.send(product[0]);
-});
+}
+);
 
 // create new product
 router.post('/', (req, res) => {
