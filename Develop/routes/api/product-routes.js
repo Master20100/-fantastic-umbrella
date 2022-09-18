@@ -70,9 +70,9 @@ router.post('/', (req, res) => {
 
 
 // update product
-router.put('/:id', async(req, res) => {
+router.put('/:id', (req, res) => {
   // update product data
- await Product.update(req.body,   
+   Product.update(req.body,   
   {
     where: { id: req.params.id},
   })
@@ -105,6 +105,7 @@ router.put('/:id', async(req, res) => {
     })
     .then((updatedProductTags) => res.json(updatedProductTags))
     .catch((err) => {
+      console.log(err)
       res.status(400).json(err);
     });
 });
