@@ -5,11 +5,11 @@ const { Tag, Product, ProductTag } = require('../../models');
 
 router.get('/', async(req, res) => {
   // find all tags
-const tags = await Tag.findAll();
+const tags = await Tag.findAll(
     {
       // be sure to include its associated Product data
       include:[{model:Product}]
-    }
+    })
     res.send(tags);
 });
 
@@ -18,10 +18,10 @@ router.get('/:id', async(req, res) => {
   // find a single tag by its `id`
   const tag = await Tag.findAll(
     {
-where:{id:req.params.id}
-},
+where:{id:req.params.id},
+
 // be sure to include its associated Product data ???
-{
+
   include:[{model:Product}]
 }
 );
